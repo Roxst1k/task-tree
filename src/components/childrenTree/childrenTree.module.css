@@ -1,0 +1,92 @@
+.wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+    margin-left: 30px;
+    background-color: seashell;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 5px;
+    animation: show 250ms;
+}
+
+.delete {
+    animation: fade 250ms forwards;
+}
+
+.showBtn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all ease-in 300ms;
+    font-size: 20px;
+
+}
+
+.showBtn:not([disabled]):hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.showBtn.active:not([disabled]) {
+    transform: rotate(90deg);
+    background-color: #61dafb;
+}
+
+.title:first-letter {
+    text-transform: capitalize;
+}
+
+.btn {
+    padding: 5px;
+    border-radius: 10px;
+    transition: all ease-in 200ms;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    color: white;
+    cursor: pointer;
+}
+
+.renameBtn:hover {
+    background-color: tomato;
+}
+
+.deleteBtn:hover {
+    transform: scale(1);
+    color: white;
+    background-color: red;
+}
+
+.addBtn:hover {
+    background-color: green;
+}
+
+@keyframes show {
+    0% {
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-150px);
+    }
+}
